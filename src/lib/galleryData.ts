@@ -21,7 +21,7 @@ export const galleryImages: GalleryImage[] = [
     title: "Short Textured Crop with Taper",
   },
   {
-    src: "/gallery/style-four.png",
+    src: "/gallery/style-four.jpeg",
     alt: "Modern styled haircut",
     title: "Modern Styled Cut",
   },
