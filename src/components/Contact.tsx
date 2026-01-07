@@ -14,7 +14,7 @@ const contactLinks = [
   },
   {
     label: "Phone",
-    href: "tel:+1234567890",
+    href: "tel:+18016957966",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path

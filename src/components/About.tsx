@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function About() {
   return (
     <section id="about" className="py-24 md:py-32 px-6 bg-[#FAF9F7]">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-          {/* Image placeholder */}
+          {/* Headshot image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -16,29 +17,13 @@ export default function About() {
             className="relative"
           >
             <div className="aspect-[4/5] bg-[#E5E7EB] relative overflow-hidden">
-              {/* Placeholder for headshot */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[#F0EFED] flex items-center justify-center">
-                    <svg
-                      className="w-8 h-8 text-[#6B7280]"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-xs text-[#6B7280] uppercase tracking-wider">
-                    Photo coming soon
-                  </p>
-                </div>
-              </div>
+              <Image
+                src="/gallery/headshot.png"
+                alt="Kale - Licensed Cosmetologist and Barber"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
             {/* Decorative accent */}
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-[#8b5cf6]/20 -z-10" />
