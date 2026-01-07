@@ -31,7 +31,7 @@ export default function Footer() {
           {/* Social links */}
           <div className="flex items-center gap-4">
             <a
-              href="https://instagram.com/placeholder"
+              href="https://instagram.com/sammirosewater"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/40 hover:text-[#8b5cf6] transition-colors duration-300"
