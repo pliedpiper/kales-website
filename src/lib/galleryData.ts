@@ -37,7 +37,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: "/gallery/clean-buzz-beard-trim.png",
-    alt: "Clean Buzz Cut with Beard Trim",
-    title: "Clean Buzz Cut with Beard Trim",
+    alt: "Modern Styled Cut with Beard Trim",
+    title: "Modern Styled Cut with Beard Trim",
   },
 ];
