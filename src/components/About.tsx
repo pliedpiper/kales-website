@@ -69,7 +69,7 @@ export default function About() {
               </div>
               <div>
                 <p className="font-[family-name:var(--font-syne)] text-3xl font-bold text-[#1A1A1A]">
-                  CO
+                  MS
                 </p>
                 <p className="text-sm text-[#6B7280] mt-1">State Licensed</p>
               </div>

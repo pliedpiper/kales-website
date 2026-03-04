@@ -18,11 +18,11 @@ const syne = Syne({
 export const metadata: Metadata = {
   title: "Kace Barthlome | Hair Stylist & Barber",
   description:
-    "Licensed cosmetologist and barber in Colorado. Specializing in trending haircuts, fades, textured styles, hair coloring, and precision grooming.",
+    "Licensed cosmetologist and barber in Mississippi. Specializing in trending haircuts, fades, textured styles, hair coloring, and precision grooming.",
   keywords: [
     "hair stylist",
     "barber",
-    "Colorado",
+    "Mississippi",
     "haircuts",
     "fades",
     "hair coloring",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kace Barthlome | Hair Stylist & Barber",
     description:
-      "Licensed cosmetologist and barber in Colorado. Specializing in trending haircuts, fades, textured styles, and precision grooming.",
+      "Licensed cosmetologist and barber in Mississippi. Specializing in trending haircuts, fades, textured styles, and precision grooming.",
     type: "website",
   },
 };
