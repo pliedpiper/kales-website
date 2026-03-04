@@ -22,6 +22,17 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -59,6 +70,9 @@ export default function Header() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
           aria-label="Toggle menu"
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-navigation"
+          aria-haspopup="menu"
         >
           <motion.span
             animate={mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
@@ -82,6 +96,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
+            id="mobile-navigation"
             className="md:hidden bg-[#FAF9F7]/95 backdrop-blur-md border-b border-[#E5E7EB]"
           >
             <ul className="px-6 py-4 space-y-4">

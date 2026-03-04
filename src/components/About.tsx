@@ -19,7 +19,7 @@ export default function About() {
             <div className="aspect-[4/5] bg-[#E5E7EB] relative overflow-hidden">
               <Image
                 src="/gallery/headshot.png"
-                alt="Kale - Licensed Cosmetologist and Barber"
+                alt="Kace Barthlome - Licensed Cosmetologist and Barber"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -48,14 +48,19 @@ export default function About() {
             <div className="space-y-6 text-[#6B7280] leading-relaxed">
               <p>
                 As a licensed cosmetologist and barber since 2021, I bring passion and
-                precision to every cut. My journey in the industry has been marked by
-                dedication to mastering both classic techniques and trending styles.
+                precision to every cut, blending fresh techniques with a strong
+                foundation in both women&apos;s hair and men&apos;s barbering.
               </p>
               <p>
-                Recognized as an{" "}
-                <span className="text-[#1A1A1A] font-medium">All Star MVP</span> at
-                Sports Clips, I take pride in delivering cuts that not only look great
-                but make my clients feel their best.
+                During 2 1/2 years at{" "}
+                <span className="text-[#1A1A1A] font-medium">Sports Clips</span>, I
+                earned the Heart of a Champion award in my first year and exceeded
+                performance goals in both Utah and Idaho.
+              </p>
+              <p>
+                I currently hold an active Colorado cosmetology license and focus on
+                helping every client leave with a look that feels current, confident,
+                and tailored to them.
               </p>
             </div>
 
@@ -69,7 +74,7 @@ export default function About() {
               </div>
               <div>
                 <p className="font-[family-name:var(--font-syne)] text-3xl font-bold text-[#1A1A1A]">
-                  MS
+                  CO
                 </p>
                 <p className="text-sm text-[#6B7280] mt-1">State Licensed</p>
               </div>

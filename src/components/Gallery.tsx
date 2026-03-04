@@ -69,16 +69,18 @@ export default function Gallery() {
           className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4"
         >
           {galleryImages.map((image, index) => (
-            <motion.div
+            <motion.button
               key={image.src}
+              type="button"
               variants={itemVariants}
               className={`relative overflow-hidden cursor-pointer group ${
                 index === 0 ? "col-span-2 row-span-2 md:col-span-2 md:row-span-2" : ""
-              }`}
+              } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8b5cf6] focus-visible:ring-offset-4 focus-visible:ring-offset-white`}
               onClick={() => {
                 setLightboxIndex(index);
                 setLightboxOpen(true);
               }}
+              aria-label={`Open gallery image: ${image.title}`}
             >
               <div
                 className={`relative w-full ${
@@ -94,17 +96,17 @@ export default function Gallery() {
                   loading={index < 4 ? "eager" : "lazy"}
                 />
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-[#1A1A1A]/0 group-hover:bg-[#1A1A1A]/30 transition-all duration-500" />
+                <div className="absolute inset-0 bg-[#1A1A1A]/10 sm:bg-[#1A1A1A]/0 sm:group-hover:bg-[#1A1A1A]/30 transition-all duration-500" />
 
-                {/* Title on hover */}
-                <div className="absolute inset-x-0 bottom-0 p-4 md:p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                {/* Keep titles visible on touch devices and on keyboard focus */}
+                <div className="absolute inset-x-0 bottom-0 p-4 md:p-6 translate-y-0 sm:translate-y-full sm:group-hover:translate-y-0 sm:group-focus-visible:translate-y-0 transition-transform duration-500">
                   <p className="text-white text-sm md:text-base font-medium">
                     {image.title}
                   </p>
                 </div>
 
                 {/* Corner accent */}
-                <div className="absolute top-3 right-3 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute top-3 right-3 w-8 h-8 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100 transition-opacity duration-500">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -120,7 +122,7 @@ export default function Gallery() {
                   </svg>
                 </div>
               </div>
-            </motion.div>
+            </motion.button>
           ))}
         </motion.div>
       </div>

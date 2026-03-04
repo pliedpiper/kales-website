@@ -30,7 +30,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xs uppercase tracking-[0.3em] text-[#8b5cf6] mb-6"
         >
-          Mississippi
+          Colorado
         </motion.p>
 
         {/* Name */}

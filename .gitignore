@@ -43,3 +43,6 @@ next-env.d.ts
 # claude
 .claude
 CLAUDE.md
+
+# local browser automation artifacts
+.playwright-cli/
