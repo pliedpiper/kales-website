@@ -58,7 +58,7 @@ export default function About() {
                 performance goals in both Utah and Idaho.
               </p>
               <p>
-                I currently hold an active Colorado cosmetology license and focus on
+                I currently hold an active Mississippi cosmetology license and focus on
                 helping every client leave with a look that feels current, confident,
                 and tailored to them.
               </p>
@@ -74,7 +74,7 @@ export default function About() {
               </div>
               <div>
                 <p className="font-[family-name:var(--font-syne)] text-3xl font-bold text-[#1A1A1A]">
-                  CO
+                  MS
                 </p>
                 <p className="text-sm text-[#6B7280] mt-1">State Licensed</p>
               </div>
