@@ -93,7 +93,7 @@ export default function Gallery() {
                   fill
                   sizes={index === 0 ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 50vw, 33vw"}
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  loading={index < 4 ? "eager" : "lazy"}
+                  priority={index === 0}
                 />
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-[#1A1A1A]/10 sm:bg-[#1A1A1A]/0 sm:group-hover:bg-[#1A1A1A]/30 transition-all duration-500" />

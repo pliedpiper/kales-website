@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 import { Outfit, Syne } from "next/font/google";
 import "./globals.css";
 
+const siteUrl = new URL(
+  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+);
+const socialImage = "/gallery/headshot.png";
+const siteTitle = "Kace Barthlome | Hair Stylist & Barber";
+const siteDescription =
+  "Licensed cosmetologist and barber in Mississippi. Specializing in trending haircuts, fades, textured styles, hair coloring, and precision grooming.";
+
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
@@ -16,9 +24,9 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Kace Barthlome | Hair Stylist & Barber",
-  description:
-    "Licensed cosmetologist and barber in Mississippi. Specializing in trending haircuts, fades, textured styles, hair coloring, and precision grooming.",
+  metadataBase: siteUrl,
+  title: siteTitle,
+  description: siteDescription,
   keywords: [
     "hair stylist",
     "barber",
@@ -30,11 +38,28 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Kace Barthlome | Hair Stylist & Barber",
-    description:
-      "Licensed cosmetologist and barber in Mississippi. Specializing in trending haircuts, fades, textured styles, and precision grooming.",
+    title: siteTitle,
+    description: siteDescription,
     type: "website",
+    url: "/",
+    images: [
+      {
+        url: socialImage,
+        width: 1200,
+        height: 1200,
+        alt: "Kace Barthlome portrait",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: [socialImage],
   },
 };
 

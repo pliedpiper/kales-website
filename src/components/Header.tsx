@@ -1,5 +1,6 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -13,6 +14,25 @@ const navLinks = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleMobileNavClick = (href: string) => (
+    event: MouseEvent<HTMLAnchorElement>
+  ) => {
+    event.preventDefault();
+    setMobileMenuOpen(false);
+
+    const targetId = href.slice(1);
+    const target = document.getElementById(targetId);
+
+    if (!target) {
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", href);
+    });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -109,7 +129,7 @@ export default function Header() {
                 >
                   <a
                     href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={handleMobileNavClick(link.href)}
                     className="block text-lg text-[#1A1A1A] hover:text-[#8b5cf6] transition-colors duration-300"
                   >
                     {link.label}
