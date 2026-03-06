@@ -9,27 +9,16 @@ import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 import { galleryImages } from "@/lib/galleryData";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1] as const,
-    },
-  },
-};
+const rotations = [-2.5, 1.8, -1.2, 2.4, -1.8, 1.5, -2.1];
+const offsets = [
+  { x: 0, y: 0 },
+  { x: 8, y: -6 },
+  { x: -4, y: 4 },
+  { x: 6, y: -8 },
+  { x: -8, y: 2 },
+  { x: 4, y: -4 },
+  { x: -6, y: 6 },
+];
 
 export default function Gallery() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -60,71 +49,62 @@ export default function Gallery() {
           </h2>
         </motion.div>
 
-        {/* Gallery grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4"
-        >
-          {galleryImages.map((image, index) => (
+        {/* Polaroid gallery */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12 py-4">
+          {galleryImages.map((image, i) => (
             <motion.button
               key={image.src}
               type="button"
-              variants={itemVariants}
-              className={`relative overflow-hidden cursor-pointer group ${
-                index === 0 ? "col-span-2 row-span-2 md:col-span-2 md:row-span-2" : ""
-              } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8b5cf6] focus-visible:ring-offset-4 focus-visible:ring-offset-white`}
+              initial={{ opacity: 0, y: 50, rotate: rotations[i] * 2 }}
+              whileInView={{
+                opacity: 1,
+                y: offsets[i].y,
+                x: offsets[i].x,
+                rotate: rotations[i],
+              }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{
+                rotate: 0,
+                scale: 1.05,
+                y: -12,
+                zIndex: 10,
+                transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+              }}
+              className="relative cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8b5cf6] focus-visible:ring-offset-4"
               onClick={() => {
-                setLightboxIndex(index);
+                setLightboxIndex(i);
                 setLightboxOpen(true);
               }}
               aria-label={`Open gallery image: ${image.title}`}
+              style={{ zIndex: i }}
             >
               <div
-                className={`relative w-full ${
-                  index === 0 ? "aspect-square md:aspect-[4/3]" : "aspect-square"
-                } bg-[#F0EFED]`}
+                className="bg-white rounded-sm p-2.5 pb-12 md:p-3 md:pb-14"
+                style={{
+                  boxShadow:
+                    "0 2px 8px rgba(0,0,0,0.06), 0 8px 30px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04)",
+                }}
               >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes={index === 0 ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 50vw, 33vw"}
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  priority={index === 0}
-                />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-[#1A1A1A]/10 sm:bg-[#1A1A1A]/0 sm:group-hover:bg-[#1A1A1A]/30 transition-all duration-500" />
-
-                {/* Keep titles visible on touch devices and on keyboard focus */}
-                <div className="absolute inset-x-0 bottom-0 p-4 md:p-6 translate-y-0 sm:translate-y-full sm:group-hover:translate-y-0 sm:group-focus-visible:translate-y-0 transition-transform duration-500">
-                  <p className="text-white text-sm md:text-base font-medium">
+                <div className="relative aspect-[4/5] overflow-hidden bg-[#F0EFED]">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+                    priority={i === 0}
+                  />
+                </div>
+                <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4">
+                  <p className="text-xs md:text-sm text-[#1A1A1A]/70 truncate">
                     {image.title}
                   </p>
-                </div>
-
-                {/* Corner accent */}
-                <div className="absolute top-3 right-3 w-8 h-8 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100 transition-opacity duration-500">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="w-full h-full text-white"
-                  >
-                    <path
-                      d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
                 </div>
               </div>
             </motion.button>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       {/* Lightbox */}
