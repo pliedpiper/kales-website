@@ -7,8 +7,8 @@ export interface GalleryImage {
 export const galleryImages: GalleryImage[] = [
   {
     src: "/gallery/textured-fringe-mid-fade.png",
-    alt: "Textured Fringe with Mid Fade hairstyle",
-    title: "Textured Fringe with Mid Fade",
+    alt: "Textured Fringe with Low Drop Fade hairstyle",
+    title: "Textured Fringe with Low Drop Fade",
   },
   {
     src: "/gallery/classic-side-part-high-fade.png",

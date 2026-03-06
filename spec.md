@@ -3,7 +3,7 @@ This is going to be a portfolio website for a hairdresser to be deployed on netl
 About Kace: 
 They have been licensed in women’s hair and men’s barbering since 2021, bringing fresh and modern techniques to my clients.
 
-During my 2½ years at Sports Clips, I was honored to receive the “Heart of a Champion” award in my first year. My dedication to excellence also led to consistently exceeding company goals, earning awards for performance in both Utah and Idaho.
+During my 3 years at Sport Clips, I was honored to receive the “Heart of a Champion” award in my first year. My dedication to excellence also led to consistently exceeding company goals, earning awards for performance in both Utah and Idaho.
 
 Currently, I hold an active Colorado cosmetology license and am committed to providing top-tier services and helping you achieve your desired style.
 

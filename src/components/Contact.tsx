@@ -19,7 +19,7 @@ const contactLinks = [
   },
   {
     label: "Email",
-    href: "mailto:kacecollege@gmail.com",
+    href: "mailto:Sammirosewater@gmail.com",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path

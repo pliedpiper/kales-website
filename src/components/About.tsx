@@ -52,8 +52,8 @@ export default function About() {
                 foundation in both women&apos;s hair and men&apos;s barbering.
               </p>
               <p>
-                During 2 1/2 years at{" "}
-                <span className="text-[#1A1A1A] font-medium">Sports Clips</span>, I
+                During 3 years at{" "}
+                <span className="text-[#1A1A1A] font-medium">Sport Clips</span>, I
                 earned the Heart of a Champion award in my first year and exceeded
                 performance goals in both Utah and Idaho.
               </p>

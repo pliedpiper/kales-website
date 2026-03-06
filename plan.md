@@ -78,7 +78,7 @@ A modern minimalist portfolio website for Kace Barthlome, a licensed cosmetologi
 #### Image Catalog & Descriptions
 | Filename | Style Description |
 |----------|-------------------|
-| 0ACF3036-D45C-423B-9560-83271E42FE20.png | Textured Fringe with Mid Fade |
+| 0ACF3036-D45C-423B-9560-83271E42FE20.png | Textured Fringe with Low Drop Fade |
 | 8E9D2047-9F71-480A-9C57-F1A83F981435.png | Classic Side Part with High Fade |
 | 926CD6F2-18E3-440A-9EED-81456E80EC44.png | Short Textured Crop with Taper |
 | A3965A3E-5CDE-4897-B25F-C71877897D95.png | *TBD - image too large to preview* |
@@ -87,7 +87,7 @@ A modern minimalist portfolio website for Kace Barthlome, a licensed cosmetologi
 | DF3B8755-E6C5-4CC5-A82D-B6AE316E66E6.png | Clean Buzz Cut with Beard Trim |
 
 ### 3. About Section
-- **Content**: Bio from spec.md (licensed since 2021, Sports Clips awards, Colorado license)
+- **Content**: Bio from spec.md (licensed since 2021, Sport Clips awards, Colorado license)
 - **Photo**: Placeholder spot for headshot (to be added later)
 - **Tone**: Professional but approachable
 
